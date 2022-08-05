@@ -102,8 +102,8 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.html" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href="{% url 'mainview' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'mainview' %} active {% endif %}">Home</a>
+                            <a href="{% url 'aboutview' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'aboutview' %} active {% endif %} ">About</a>
                             <a href="course.html" class="nav-item nav-link">Courses</a>
                             <a href="teacher.html" class="nav-item nav-link">Teachers</a>
                             <div class="nav-item dropdown">
