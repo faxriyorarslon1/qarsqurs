@@ -2,21 +2,23 @@ from multiprocessing import context
 from django.shortcuts import render
 
 from mainapp.models import HeaderCarousel, Student
-from .forms import RegisterForm
+from .forms import RegisterForm, RegisterModelForm
 
 
 def mainview(request):
     if request.method == "POST":
-        form = RegisterForm(request.POST)
+        form = RegisterModelForm(request.POST)
         if form.is_valid():
-            name = form.data.get("name")
-            email = form.data.get("email")
-            course = form.data.get("course")
-            Student.objects.create(name=name, email=email, course=course)
+            form.save()
+            # name = form.data.get("name")
+            # email = form.data.get("email")
+            # course = form.data.get("course")
+            # Student.objects.create(name=name, email=email, course=course)
+            
     ads = HeaderCarousel.objects.all()[:3]
     for ad in ads:
         ad_title = ad.title[:5]
-    form = RegisterForm()      
+    form = RegisterModelForm()      
     context = {
         "form":form,
         "ads":ads,
