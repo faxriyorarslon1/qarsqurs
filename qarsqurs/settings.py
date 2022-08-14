@@ -70,17 +70,30 @@ WSGI_APPLICATION = 'qarsqurs.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'qarsqursdb', 
+#         'USER': 'postgres', 
+#         'PASSWORD': 'root',
+#         'HOST': '127.0.0.1', 
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'qarsqursdb', 
-        'USER': 'postgres', 
-        'PASSWORD': 'root',
+        'USER': 'myprojectuser', 
+        'PASSWORD': 'password',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
 }
 
+# CREATE DATABASE qarsqursdb;
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
